@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+<head><title>Produk</title></head>
+<body>
+<h1>Daftar Produk</h1>
+<ul>
+{% for p in products %}
+  <li>{{ p.name }} - Rp{{ p.price }} 
+      <a href="{{ url_for('add_to_cart', product_id=p.id) }}">[Tambah]</a></li>
+{% endfor %}
+</ul>
+<a href="{{ url_for('cart') }}">Lihat Keranjang</a>
+</body>
+</html>

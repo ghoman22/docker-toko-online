@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head><title>Keranjang</title></head>
+<body>
+<h1>Keranjang Belanja</h1>
+<ul>
+{% for p in cart %}
+  <li>{{ p.name }} - Rp{{ p.price }}</li>
+{% endfor %}
+</ul>
+<p>Total: Rp{{ total }}</p>
+<a href="{{ url_for('checkout') }}">Checkout</a> | 
+<a href="{{ url_for('index') }}">Kembali</a>
+</body>
+</html>
