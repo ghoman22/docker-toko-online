@@ -27,6 +27,8 @@ jobs:
         echo "$SSH_KEY" | tr -d '' > temp_key
         chmod 600 temp_key
 
+        chmod +x setup.sh
+        
         rsync -avz -e "ssh -i temp_key" ./ $DEPLOY_USER@$DEPLOY_SERVER:/home/$DEPLOY_USER/toko-online-python
 
         ssh -i temp_key $DEPLOY_USER@$DEPLOY_SERVER << 'EOF'
