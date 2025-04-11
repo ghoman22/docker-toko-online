@@ -12,4 +12,4 @@
 4. Jalankan `ssh-keygen` (opsional) jika lo mau pakai deploy key sendiri.
 
 5. Cek hasil deploy di GitHub tab `Actions`, lalu akses app via:
-   http://<IP_EC2>:5000
+   http://<IP_EC2>:5000 ds
