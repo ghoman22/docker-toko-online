@@ -24,7 +24,7 @@ jobs:
       run: |
         mkdir -p ~/.ssh
         ssh-keyscan -t rsa $DEPLOY_SERVER >> ~/.ssh/known_hosts
-        echo "$SSH_KEY" | tr -d '' > temp_key
+        echo "$SSH_KEY" | tr -d '' > temp_key
         chmod 600 temp_key
 
         rsync -avz -e "ssh -i temp_key" ./ $DEPLOY_USER@$DEPLOY_SERVER:/home/$DEPLOY_USER/toko-online-python
